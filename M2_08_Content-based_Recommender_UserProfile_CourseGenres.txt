@@ -1,0 +1,79 @@
+M2_08 - Content-Based Recommender System Using User Profile and Course Genres - Simple Explanation
+=====================================================================================================
+
+WHAT THIS NOTEBOOK TEACHES:
+This notebook shows how to build a course recommendation system that recommends courses to users based on their interests (user profile) and what topics each course covers (course genres).
+
+MAIN CONCEPTS:
+
+1. USER PROFILE - What You're Interested In:
+   - A user profile is like a list showing which topics/subjects a user is interested in
+   - It's created based on courses the user has already taken and their ratings
+   - Example: If a user rated "Machine Learning with Python" as 5 stars, they're likely interested in Python and Machine Learning
+
+2. COURSE GENRES - What Topics A Course Covers:
+   - Each course has multiple topics/genres it covers
+   - Example: "Machine Learning with Python" covers both Python and Machine Learning genres
+   - Genres are marked as: 1 = course covers this topic, 0 = course doesn't cover it
+
+3. THE RECOMMENDATION IDEA:
+   - If a user is interested in certain topics AND a course also covers those topics
+   - Then that course is a good recommendation for that user
+   - This is called "content-based" because we match content (topics) between user interests and courses
+
+HOW IT WORKS - STEP BY STEP:
+
+STEP 1: Build User Profile Vector
+   - Take a user's course ratings (e.g., rated course 1 as 3 stars, hasn't taken course 2)
+   - Multiply their ratings by the course genres to get a weighted interest vector
+   - Result: A vector showing interest level in each genre
+   - Example: [Python: 3, Database: 0, MachineLearning: 3] means very interested in Python and ML
+
+STEP 2: Get Course Genre Vectors
+   - Each course has a vector showing which topics it covers
+   - Example: "Python 101" = [Python: 1, Database: 0, MachineLearning: 0]
+
+STEP 3: Calculate Recommendation Score
+   - Use DOT PRODUCT (multiply user profile vector with course genre vector)
+   - High score = good match (user interested in topics + course covers those topics)
+   - Low score = poor match
+   - Formula: Score = User_Profile · Course_Genres
+
+STEP 4: Recommend High-Scoring Courses
+   - Set a score threshold (e.g., only recommend if score > 10)
+   - Recommend all courses above the threshold to the user
+   - Sort by highest score first
+
+THE PRACTICAL TASK:
+   - You have 1000 test users with their profiles
+   - You have hundreds of courses with their genres
+   - For each user, find courses they haven't taken yet
+   - Calculate recommendation scores for all unknown courses
+   - Only keep courses above the score threshold
+   - Generate recommendations for each user
+
+ANALYTICS QUESTIONS ANSWERED:
+   1. On average, how many new courses are recommended per user?
+   2. Which courses are most frequently recommended across all users?
+
+KEY ADVANTAGES:
+   - Simple and fast to calculate (just matrix multiplication)
+   - Easy to explain (matches topics between user and course)
+   - No need for collaborative filtering or complex algorithms
+   - Works well when you know what topics users are interested in
+
+PARAMETER TO TUNE:
+   - Score Threshold: Higher threshold = fewer recommendations but higher confidence
+   - Example: If threshold is 10, users might get 2-5 recommendations on average
+   - If threshold is 5, users might get 10-20 recommendations
+
+WORKFLOW SUMMARY:
+   1. Load user profiles (what topics they're interested in)
+   2. Load course genres (what topics each course covers)
+   3. Load test users (who needs recommendations)
+   4. For each test user:
+      - Find courses they haven't taken
+      - Calculate dot product score for each unknown course
+      - Filter courses above threshold
+      - Add to recommendation list
+   5. Analyze recommendations: average per user, most popular courses
