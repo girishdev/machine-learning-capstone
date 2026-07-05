@@ -1,0 +1,26 @@
+Here's what this code does in simple words:
+
+The Goal: Analyze product reviews to understand what words are used and how often.
+
+Step-by-step breakdown:
+
+1. Download Tools - The code downloads NLTK (a text analysis library) tools needed for processing text.
+
+2. Two Sample Reviews - It has two product reviews about a camera:
+   - Review 1: talks about good photos but mentions battery life issues
+   - Review 2: says battery is disappointing but camera quality is great
+
+3. Break Text Into Words (Tokenization) - Converts each review from a long sentence into individual words.
+
+4. Remove Common Words (Stop Word Removal) - Removes words like "the", "is", "I'm" that appear everywhere and don't add meaning. This keeps only important words like "camera", "battery", "quality".
+
+5. Create a Dictionary - Makes a list of all unique important words and assigns each a number (like camera=0, battery=1, etc.)
+
+6. Bag of Words - Creates a simple count of how many times each important word appears in each review. For example: "camera appears 3 times, quality appears 2 times" etc.
+
+7. Print Results - Shows you:
+   - The filtered words
+   - The dictionary mapping
+   - How many times each word appears in each review
+
+In simple terms: It's like summarizing what people talk about in reviews by counting important words while ignoring filler words.

@@ -1,0 +1,23 @@
+# Core data science stack
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+scikit-learn
+
+# Notebook environment
+jupyter
+ipykernel
+
+# NLP and text processing
+nltk
+wordcloud
+gensim
+
+# Recommendation systems
+scikit-surprise
+
+# Deep learning
+tensorflow
+keras

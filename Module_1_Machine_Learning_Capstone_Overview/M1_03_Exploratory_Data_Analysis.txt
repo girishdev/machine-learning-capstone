@@ -1,0 +1,90 @@
+1. 03_Exploratory_Data_Analysis.py (Python Script)
+
+This is a standalone Python script that performs feature extraction and data analysis on course data. Here's what it does:
+
+Overview:
+- Demonstrates the Bag of Words (BoW) technique for converting course titles into numerical features
+- Used to analyze course data and recommend similar courses
+
+Main Steps:
+
+1. Library Setup - Imports necessary libraries (pandas, numpy, matplotlib, scikit-learn, wordcloud)
+
+2. Data Loading - Reads a CSV file containing course information
+
+3. Data Exploration - Shows:
+   - First 5 rows of data
+   - Dataset shape and columns
+   - Course titles
+
+4. Convert Titles to Words - Takes all course titles and converts them into a list of documents
+
+5. Create Bag of Words - Uses `CountVectorizer` to:
+   - Remove common English words (stopwords)
+   - Convert text into numerical vectors
+   - Creates a matrix where each row = course, each column = word
+
+6. Word Frequency Analysis - Calculates which words appear most frequently across all courses
+
+7. Visualization - Creates a bar chart showing the top 20 most common words
+
+8. WordCloud Generation - Creates a visual cloud of all course title words (larger words = more frequent)
+
+9. Course Similarity - Uses Cosine Similarity to find which courses are similar to each other
+
+10. Find Recommendations - Shows courses similar to the first course in the dataset
+
+11. Save Results - Exports the Bag of Words features to a CSV file
+
+---
+
+2. lab_jupyter_eda.ipynb (Jupyter Notebook - Interactive)
+
+This is an interactive educational notebook focusing on Exploratory Data Analysis (EDA) of course enrollment data. It's part of IBM's Machine Learning Capstone project.
+
+Overview:
+- Teaches how to analyze real-world course and enrollment datasets
+- Estimated time: 45 minutes
+- Designed as a learning lab with tasks/exercises for students
+
+Main Sections:
+
+1. Setup Phase - Installs required libraries and imports them
+
+2. Load Two Datasets:
+   - Course Dataset: Contains course titles, IDs, and genres (ML, Python, BigData, etc.)
+   - Ratings Dataset: Contains user IDs, course IDs, and ratings (1-5 scale)
+
+3. WordCloud Analysis - Creates a visual cloud of keywords from course titles to see popular IT topics
+
+4. Course Genre Analysis (Interactive Tasks):
+   - Find all Machine Learning courses
+   - Find courses in multiple genres (ML + BigData)
+   - Count how many courses belong to each genre
+   - Visualize genre popularity with bar charts
+
+5. Enrollment Analysis (Interactive Tasks):
+   - Analyze user enrollment patterns
+   - Show statistics on how many courses each user rated
+   - Create histogram showing distribution of user enrollments
+
+6. Find Top Courses:
+   - Find the 20 most popular courses (most enrollments)
+   - Join with course titles to see what courses people like most
+   - Calculate what percentage of all enrollments these top 20 courses represent
+
+Key Differences:
+
+| Aspect | Python Script | Jupyter Notebook |
+|--------|---------------|------------------|
+| Type | Automated script | Interactive learning environment |
+| Purpose | Feature extraction & similarity | Exploratory data analysis |
+| Techniques | Bag of Words, Cosine Similarity | Grouping, Filtering, Visualization |
+| Output | Recommendations, CSV file | Charts, Statistics, Insights |
+| User Interaction | Runs automatically | Student fills in code solutions |
+
+---
+
+In Simple Words:
+- Python script = Does data processing work automatically (like a factory)
+- Jupyter notebook = Teaches you how to understand data step-by-step (like a classroom)
